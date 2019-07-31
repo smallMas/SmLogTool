@@ -16,6 +16,9 @@
 		9C035FDC22F1A0D400A6D06E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C035FDB22F1A0D400A6D06E /* main.m */; };
 		9C035FE622F1A0D400A6D06E /* SmLogToolTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C035FE522F1A0D400A6D06E /* SmLogToolTests.m */; };
 		9C035FF122F1A0D400A6D06E /* SmLogToolUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C035FF022F1A0D400A6D06E /* SmLogToolUITests.m */; };
+		9C03600322F1C2D400A6D06E /* SmLogOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C03600222F1C2D400A6D06E /* SmLogOperation.m */; };
+		9C03600622F1C5AF00A6D06E /* SmLogManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C03600522F1C5AF00A6D06E /* SmLogManager.m */; };
+		9C03600922F1C72D00A6D06E /* SmLogFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C03600822F1C72D00A6D06E /* SmLogFile.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +57,12 @@
 		9C035FF022F1A0D400A6D06E /* SmLogToolUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SmLogToolUITests.m; sourceTree = "<group>"; };
 		9C035FF222F1A0D400A6D06E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C035FFF22F1A29F00A6D06E /* SmLogTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SmLogTool.h; sourceTree = "<group>"; };
+		9C03600122F1C2D400A6D06E /* SmLogOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SmLogOperation.h; sourceTree = "<group>"; };
+		9C03600222F1C2D400A6D06E /* SmLogOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SmLogOperation.m; sourceTree = "<group>"; };
+		9C03600422F1C5AF00A6D06E /* SmLogManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SmLogManager.h; sourceTree = "<group>"; };
+		9C03600522F1C5AF00A6D06E /* SmLogManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SmLogManager.m; sourceTree = "<group>"; };
+		9C03600722F1C72D00A6D06E /* SmLogFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SmLogFile.h; sourceTree = "<group>"; };
+		9C03600822F1C72D00A6D06E /* SmLogFile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SmLogFile.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,9 +149,23 @@
 		9C035FFE22F1A29000A6D06E /* SmLogToolLib */ = {
 			isa = PBXGroup;
 			children = (
+				9C03600022F1C2C200A6D06E /* LogFile */,
 				9C035FFF22F1A29F00A6D06E /* SmLogTool.h */,
 			);
 			path = SmLogToolLib;
+			sourceTree = "<group>";
+		};
+		9C03600022F1C2C200A6D06E /* LogFile */ = {
+			isa = PBXGroup;
+			children = (
+				9C03600122F1C2D400A6D06E /* SmLogOperation.h */,
+				9C03600222F1C2D400A6D06E /* SmLogOperation.m */,
+				9C03600422F1C5AF00A6D06E /* SmLogManager.h */,
+				9C03600522F1C5AF00A6D06E /* SmLogManager.m */,
+				9C03600722F1C72D00A6D06E /* SmLogFile.h */,
+				9C03600822F1C72D00A6D06E /* SmLogFile.m */,
+			);
+			path = LogFile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,9 +298,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C03600622F1C5AF00A6D06E /* SmLogManager.m in Sources */,
 				9C035FCE22F1A0D200A6D06E /* ViewController.m in Sources */,
+				9C03600322F1C2D400A6D06E /* SmLogOperation.m in Sources */,
 				9C035FCB22F1A0D200A6D06E /* AppDelegate.m in Sources */,
 				9C035FDC22F1A0D400A6D06E /* main.m in Sources */,
+				9C03600922F1C72D00A6D06E /* SmLogFile.m in Sources */,
 				9C035FD422F1A0D200A6D06E /* SmLogTool.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

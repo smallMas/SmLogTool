@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "SmLogManager.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,28 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [SmLogManager sharedInstance];
+    
+    for (NSInteger i = 0; i < 10000; i++) {
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            for (NSInteger j = 0; j < 1; j++) {
+//                NSLog(@"==异步 i : %d  j : %d",i,j);
+                
+                if (i % 5 == 0) {
+                    SmLogError(@"异步 i : %d  j : %d",i,j);
+                }else if (i % 5 == 1) {
+                    SmLogWarn(@"异步 i : %d  j : %d",i,j);
+                }else if (i % 5 == 2) {
+                    SmLogInfo(@"异步 i : %d  j : %d",i,j);
+                }else if (i % 5 == 3) {
+                    SmLogDebug(@"异步 i : %d  j : %d",i,j);
+                }else if (i % 5 == 4) {
+                    SmLogVerbose(@"异步 i : %d  j : %d",i,j);
+                }
+            }
+        });
+    }
     return YES;
 }
 
