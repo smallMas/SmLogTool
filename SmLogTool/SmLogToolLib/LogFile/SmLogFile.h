@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSString *)todayString;
 + (NSString *)logFolderPath;
+// 列举出日志目录下的所有日志文件，是否除去今天的日志
++ (NSArray *)allLogFilesIsExceptToday:(BOOL)isExceptToday;
 
 @end
 

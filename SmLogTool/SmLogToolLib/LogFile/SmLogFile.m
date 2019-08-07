@@ -37,4 +37,26 @@
     return [self stringWithDate:[NSDate date] formatter:@"yyyy-MM-dd"];
 }
 
++ (NSArray *)allLogFilesIsExceptToday:(BOOL)isExceptToday {
+    NSString *today = [self todayString];
+    NSMutableArray *array = [NSMutableArray new];
+    NSArray *files = [[NSFileManager defaultManager] subpathsOfDirectoryAtPath:[self logFolderPath] error:nil];
+    for (NSString *name in files) {
+        NSArray *arr = [name componentsSeparatedByString:@"."];
+        NSString *suffix = arr.lastObject;
+        if ([suffix isEqualToString:@"log"]) {
+            BOOL isAdd = YES;
+            NSString *date = arr.firstObject;
+            if (isExceptToday == YES && [date isEqualToString:today]) {
+                isAdd = NO;
+            }
+            if (isAdd) {
+                [array addObject:name];
+            }
+        }
+    }
+    return array;
+}
+
+
 @end
